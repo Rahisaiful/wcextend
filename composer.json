@@ -1,0 +1,17 @@
+{
+	"config": {
+		"optimize-autoloader": true
+	},
+	"autoload" : {
+		"psr-4": {
+			"Wcextend\\Classes\\" : "./classes",
+			"Wcextend\\Inc\\" : "./inc",
+			"Wcextend\\Admin\\" : "./admin"
+		},
+		"classmap": [
+			"classes/",
+			"inc/",
+			"admin/"
+		]
+	}
+}
