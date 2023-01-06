@@ -23,7 +23,7 @@ if( !defined( 'WCEXTEND_ALERT_MSG' ) )
 
 // Define constants for plugin directory path.
 if( !defined( 'WCEXTEND_DIR_PATH' ) )
-	define( 'WCEXTEND_DIR_PATH', plugin_dir_path( __FILE__ ).'/' );
+	define( 'WCEXTEND_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 // Define constants for plugin dirname.
 if( !defined( 'WCEXTEND_DIR_NAME' ) )
@@ -31,7 +31,7 @@ if( !defined( 'WCEXTEND_DIR_NAME' ) )
 
 // Define constants for plugin directory path.
 if( !defined( 'WCEXTEND_DIR_URL' ) )
-	define( 'WCEXTEND_DIR_URL', plugin_dir_url( __FILE__ ).'/' );
+	define( 'WCEXTEND_DIR_URL', plugin_dir_url( __FILE__ ) );
 
 // Define constants for plugin basenam.
 if( !defined( 'WCEXTEND_BASENAME' ) )
@@ -45,6 +45,7 @@ final class Wcextend {
 
 	function __construct() {
 		add_action( 'init', [ $this, 'init' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueueScripts' ] );
 	}
 	
 	public static function getInstance() {
@@ -57,6 +58,11 @@ final class Wcextend {
 
 	public function init() {
 		new Wcextend\Inc\Hooks();
+	}
+
+	public function enqueueScripts() {
+		wp_enqueue_style( 'wce-main', WCEXTEND_DIR_URL.'build/index.css',[], '1.0.0', false );
+		wp_enqueue_script( 'wce-react-main', WCEXTEND_DIR_URL.'build/index.js',['wp-element','react', 'react-dom'], '1.0.0', true );
 	}
 
 }

@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 
-class Nav_Bar extends Components {
+class NavBar extends Component {
 
 	render() {
 
-		return <div class="wcextend-shop-admin-sidebar">
-				<div class="wce-site-logo">Logo</div>
+		return <div className="wcextend-shop-admin-sidebar">
+				<div className="wce-site-logo">Logo</div>
 				<ul>
-					<li><a title="order" href=""><span class="dashicons dashicons-cart"></span></a></li>
-					<li><a title="Customer" href=""><span class="dashicons dashicons-admin-users"></span></a></li>
-					<li><a title="Customer" href=""><span class="dashicons dashicons-media-spreadsheet"></span></a></li>
+					<li><a title="order" href=""><span className="dashicons dashicons-cart"></span></a></li>
+					<li><a title="Customer" href=""><span className="dashicons dashicons-admin-users"></span></a></li>
+					<li><a title="Customer" href=""><span className="dashicons dashicons-media-spreadsheet"></span></a></li>
 				</ul>
 			</div>
 
@@ -17,4 +17,4 @@ class Nav_Bar extends Components {
 
 }
 
-export default Nav_Bar
+export default NavBar
