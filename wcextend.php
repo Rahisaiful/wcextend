@@ -38,7 +38,7 @@ if( !defined( 'WCEXTEND_BASENAME' ) )
 	define( 'WCEXTEND_BASENAME', plugin_basename( __FILE__ ) );
 
 require_once WCEXTEND_DIR_PATH.'vendor/autoload.php';
-
+//use Automattic\WooCommerce\Client;
 final class Wcextend {
 
 	private static $instance;
@@ -46,8 +46,12 @@ final class Wcextend {
 	function __construct() {
 		add_action( 'init', [ $this, 'init' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueueScripts' ] );
+		add_filter( 'woocommerce_rest_check_permissions', [ __CLASS__,'myfunction_allow_rest_api_queries'], 10, 4 );
 	}
 	
+public static function myfunction_allow_rest_api_queries( $permission, $context, $zero, $object ) {
+return true;  // Allow all queries.
+}
 	public static function getInstance() {
 
 		if( is_null( self::$instance ) ) {
@@ -57,7 +61,27 @@ final class Wcextend {
 	}
 
 	public function init() {
+
+
+
+/*$woocommerce = new Client(
+  'http://localhost/wcextend',
+  'ck_1f0c816015be238c106418907fdae49699542e25',
+  'cs_ce976b38096c94002984247e4baa4b67856ce9e3',
+  [
+  	'wp_api' => true,
+    'version' => 'wc/v3',
+   
+  ]
+);*/
+
+// https://woocommerce.github.io/woocommerce-rest-api-docs/?php#list-all-orders
+
+//print_R( $woocommerce->get('orders') );
+
+
 		new Wcextend\Inc\Hooks();
+		new Wcextend\Inc\WC_API();
 	}
 
 	public function enqueueScripts() {

@@ -1,4 +1,4 @@
-.wce-popup-wrap {
+/*.wce-popup-wrap {
 	position: absolute;
 	top: -150%;
 	left: 50%;
@@ -17,17 +17,200 @@
 	transform: translate(-50%, -50%) scale(1);
 	opacity: 1;
 	transition: top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
-}
+}*/
 .wce-popup-close-btn {
-	position: absolute;
-	top:10px;
-	right: 10px;
-	width: 15px;
-	height: 15px;
-	background: #888;
-	color: #eee;
+	background: #d71717 !important;
+    border-radius: 38px;
+    color: #fdfdfd !important;
+    cursor: pointer;
+    height: 40px;
+    line-height: 15px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 10px;
+    width: 40px;
+    padding: 0;
+    transition: 0.4s;
+}
+.wce-popup-close-btn:hover {
+	background: transparent !important;
+	color: #111 !important;
+	border: 2px solid #d71717 !important;
+}
+.wce-order-info {
 	text-align: center;
-	line-height: 15px;
-	border-radius: 15px;
-	cursor: pointer;
+	margin-bottom: 20px;
+}
+.wce-billing-info-wrap {
+	display: flex;
+    justify-content: space-between;
+}
+.wce-order-info p,
+.wce-billing-info-wrap p {
+	font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+	margin-bottom: 3px;
+}
+.wce-order-info h2{
+	margin-bottom: 10px;
+	font-size: 22px;
+	color:#403e57;
+	font-weight: 600;
+}
+.wce-billing-info-wrap h4{
+	font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 13px;
+    color: #403e57;
+}
+.wce-order-invoice-list-group {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.wce-order-invoice-list {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.wce-order-items {
+	margin-top: 40px;
+}
+
+.wce-order-invoice-list li {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.wce-order-invoice-list li .title {
+
+    width: 100px;
+    text-transform: capitalize;
+}
+.wce-order-invoice-list li .clone {
+    font-weight: 700;
+    margin-right: 30px;
+}
+.wce-order-invoice-list li span {
+    font-size: 15px;
+}
+.wce-order-action {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.order-info-tabs {
+	display: flex;
+	justify-content: flex-start;
+}
+.order-info-tab-area {
+	min-width: 140px;
+	background: #0858f70f;
+	height: 100vh;
+}
+.order-info-content-area {
+	padding-right: 15px;
+	padding-left: 15px;
+	width: 100%;
+}
+.order-info-tab-area ul {
+	margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.order-info-tab-area ul li {
+	/*background: linear-gradient(to top, #0858f7, #2b77e5);*/
+    color: #111;
+    font-size: 15px;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-bottom: 1px solid #0858f7;
+    font-weight: 500;
+}
+.order-info-tab ul li.active,
+.order-info-tab-area ul li:hover{
+	background: linear-gradient(to top, #0858f7, #2b77e5);
+	color: #fff;
+}
+.order-action-btn {
+	font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 12px 22px;
+    border-radius: 8px;
+    transition: 0.3s;
+    margin-bottom: 13px;
+    text-decoration: none;
+}
+.wce-btn-success {
+	background: #146c43;
+	color: #fff;
+}
+
+.wce-btn-success:hover {
+	background: #157347;
+}
+
+.wce-btn-dark {
+	background: #1a1e21;
+	color: #fff;
+}
+.wce-btn-dark:hover {
+	background: #157347;
+}
+.wce-invoice-btns {
+	display: flex;
+	flex-direction: column;
+}
+.wce-form-group {
+	margin-bottom: 20px;
+}
+.wce-form-group label {
+	display: block;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    font-size: 15px;
+    background: #0858f7;
+    width: max-content;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+}
+.wce-form-group select,
+.wce-form-group input,
+.wce-form-group textarea {
+	border: 1px solid #d1d1d1;
+    min-width: 380px;
+    font-size: 16px;
+}
+
+.wce-form-group textarea {
+	padding: 6px;
+}
+.wce-table-product-name img {
+	width: 40px;
+	margin-right: 8px;
+}
+.wce-table-product-name {
+	display: flex;
+	justify-content: flex-start;
 }

@@ -9,4 +9,5 @@ return array(
     'Wcextend\\Inc\\' => array($baseDir . '/inc'),
     'Wcextend\\Classes\\' => array($baseDir . '/classes'),
     'Wcextend\\Admin\\' => array($baseDir . '/admin'),
+    'Automattic\\WooCommerce\\' => array($vendorDir . '/automattic/woocommerce/src/WooCommerce'),
 );

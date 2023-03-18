@@ -12,5 +12,11 @@
   "license": "ISC",
   "devDependencies": {
     "@wordpress/scripts": "^25.0.0"
+  },
+  "dependencies": {
+    "@woocommerce/woocommerce-rest-api": "^1.0.1",
+    "react-modal": "^3.16.1",
+    "swr": "^2.0.3",
+    "woocommerce-api": "^1.5.0"
   }
 }
