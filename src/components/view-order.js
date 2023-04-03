@@ -3,16 +3,14 @@ import React, { useState, useEffect } from 'react';
 
 export default function View_Order( props ) {
 
-
 	let data = props.data;
-
 
 	const [ currentTab, setTab ] = useState("orderinfo");
 
 	const handleTab = (e) => {
 		setTab( e.target.id );
 	}
-console.log( 'say hello' )	
+console.log( data )	
 	return(<div>
 		<div className="order-info-tabs">
 
@@ -72,7 +70,6 @@ console.log( 'say hello' )
 						            <th>uid</th>
 						            <th>product</th>
 						            <th>price</th>
-						            <th>discount</th>
 						            <th>quantity</th>
 						            <th>Amount</th>
 						        </tr>
@@ -93,10 +90,9 @@ console.log( 'say hello' )
 							                    </div>
 							                </div>
 							            </td>
-							            <td>$20</td>
-							            <td>20%</td>
-							            <td>03</td>
-							            <td>$15</td>
+							            <td>{item.price}</td>
+							            <td>{item.quantity}</td>
+							            <td>{item.total}</td>
 							        </tr>)
 
 						    	} )
@@ -108,11 +104,10 @@ console.log( 'say hello' )
 						</table>
 						<div class="wce-order-invoice-list-group">
 						    <ul class="wce-order-invoice-list">
-						        <li><span className="title">subtotal</span><span class="clone">:</span><span className="digit">$2,749.00</span></li>
-						        <li><span className="title">discount</span><span class="clone">:</span><span className="digit">$134.00</span></li>
-						        <li><span className="title">shipping</span><span class="clone">:</span><span className="digit">$60.00</span></li>
-						        <li><span className="title">total</span><span class="clone">:</span><span className="digit total">$2,878.00</span></li>
-						        <li><span className="title">status</span><span class="clone">:</span><span className="status purple">cod</span></li>
+						        <li><span className="title">subtotal</span><span class="clone">:</span><span className="digit">$2,749.00 NN</span></li>
+						        <li><span className="title">discount</span><span class="clone">:</span><span className="digit">{data.discount_total}</span></li>
+						        <li><span className="title">shipping</span><span class="clone">:</span><span className="digit">{data.shipping_total}</span></li>
+						        <li><span className="title">total</span><span class="clone">:</span><span className="digit total">{data.total}</span></li>
 						    </ul>
 						</div>
 					</div>
